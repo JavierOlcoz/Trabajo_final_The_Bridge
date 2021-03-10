@@ -1,3 +1,8 @@
+# png, h5 and jpg files
+**/*.png
+**/*.jpg
+**/*.h5
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

@@ -16,7 +16,13 @@ from PIL import Image
 #--------------------------------------------------------------------------------------
 # Load model
 
-model = load_model('C:\\Users\\usuario\\Desktop\\alumno_data_sciece\\data_science\\Trabajo_final_The_Bridge\\models\\VGG16_15_epochs_model.h5')
+path = os.path.dirname(os.path.dirname(os.path.dirname( __file__ )))
+
+camino_modelo = path + os.sep + "models" + os.sep + "VGG16_15_epochs_model.h5"
+
+model = load_model(camino_modelo)
+
+#model = load_model('C:\\Users\\usuario\\Desktop\\alumno_data_sciece\\data_science\\Trabajo_final_The_Bridge\\models\\VGG16_15_epochs_model.h5')
 
 
 #-----------------------------------------------------------------------------
@@ -118,12 +124,13 @@ def get_image(argu):
     [dash.dependencies.Input("intermediate-operation", "children")],
 )
 
-def update_prediction(path):
+def update_prediction(path_1):
     s = 224
 
     X_test = []
-    file = 'C:\\Users\\usuario\\Desktop\\alumno_data_sciece\\data_science\\Trabajo_final_The_Bridge\\src\\utils\\assets\\' + str(path) + '.jpg'
-
+    #file = 'C:\\Users\\usuario\\Desktop\\alumno_data_sciece\\data_science\\Trabajo_final_The_Bridge\\src\\utils\\assets\\' + str(path_1) + '.jpg'
+    file = path + os.sep + 'src' + os.sep + 'utils' + os.sep + 'assets' + os.sep + str(path_1) + '.jpg'
+    #print(file)
          
     image = cv2.imread(file)
     image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)

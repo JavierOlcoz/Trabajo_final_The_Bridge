@@ -53,18 +53,18 @@ subtitle = html.Div(
 button = html.Button(style={"backgroundColor": colors['button'], 'color': colors['text']}, children="Predict Image", id="submit-val")
 space = html.Br()
 sample_image = html.Img(
-    style={"padding": 10, "width": "224px", "height": "224px"}, id="image"
+    style={"padding": 10, "width": "300px", "height": "300px"}, id="image"
 )
 model_prediction = html.H3(style={'color': colors['text']}, id="pred", children=None)
 shoot = html.H3(style={'color': colors['text']}, id='who', children=None)
 intermediate = html.Div(id="intermediate-operation", style={"display": 'none'})
 image_bob = html.Img(
-    style={"position":"fixed","top":150, "left":100,"padding": 10, "width": "300px",
-    "height": "300px"}, src=app.get_asset_url('Gino.png')
+    style={"position":"fixed","top":150, "left":100,"padding": 10, "width": "450px",
+    "height": "450px"}, src=app.get_asset_url('Gino.png')
 )
 image_bart = html.Img(
-    style={"position":"fixed","top":150, "right":100,"padding": 10, "width": "300px",
-    "height": "300px"}, src=app.get_asset_url('image_bart.png')
+    style={"position":"fixed","top":150, "right":100,"padding": 10, "width": "450px",
+    "height": "450px"}, src=app.get_asset_url('image_bart.png')
 )
 
 #--------------------------------------------------------------------------------------
@@ -83,6 +83,8 @@ app.layout = html.Div(
         model_prediction,
         shoot,
         intermediate,
+        space,
+        space,
         space,
         space,
         space,

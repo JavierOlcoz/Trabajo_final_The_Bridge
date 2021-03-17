@@ -1,0 +1,1 @@
+Folder created to set images to predict by the file "main_predict"
